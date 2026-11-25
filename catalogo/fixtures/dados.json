@@ -3,106 +3,99 @@
   "model": "catalogo.diretor",
   "pk": 1,
   "fields": {
-    "nome": "Walter Salles"
+    "nome": "Christopher Nolan"
   }
 },
 {
   "model": "catalogo.diretor",
   "pk": 2,
   "fields": {
-    "nome": "Fernando Meirelles"
+    "nome": "Steven Spielberg"
   }
 },
 {
   "model": "catalogo.diretor",
   "pk": 3,
   "fields": {
-    "nome": "José Padilha"
+    "nome": "Quentin Tarantino"
   }
 },
 {
   "model": "catalogo.diretor",
   "pk": 4,
   "fields": {
-    "nome": "Anna Muylaert"
+    "nome": "Martin Scorsese"
   }
 },
 {
   "model": "catalogo.diretor",
   "pk": 5,
   "fields": {
-    "nome": "Guel Arraes"
+    "nome": "Hayao Miyazaki"
   }
 },
 {
   "model": "catalogo.diretor",
   "pk": 6,
   "fields": {
-    "nome": "Karim Aïnouz"
-  }
-},
-{
-  "model": "catalogo.diretor",
-  "pk": 7,
-  "fields": {
-    "nome": "Kleber Mendonça Filho"
-  }
-},
-{
-  "model": "catalogo.diretor",
-  "pk": 8,
-  "fields": {
-    "nome": "Hector Babenco"
+    "nome": "Denis Villeneuve"
   }
 },
 {
   "model": "catalogo.categoria",
   "pk": 1,
-  "fields": {
-    "nome": "Drama"
-  }
-},
-{
-  "model": "catalogo.categoria",
-  "pk": 2,
-  "fields": {
-    "nome": "Policial"
-  }
-},
-{
-  "model": "catalogo.categoria",
-  "pk": 3,
-  "fields": {
-    "nome": "Comédia"
-  }
-},
-{
-  "model": "catalogo.categoria",
-  "pk": 4,
-  "fields": {
-    "nome": "Romance"
-  }
-},
-{
-  "model": "catalogo.categoria",
-  "pk": 5,
   "fields": {
     "nome": "Suspense"
   }
 },
 {
   "model": "catalogo.categoria",
+  "pk": 2,
+  "fields": {
+    "nome": "Crime"
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 3,
+  "fields": {
+    "nome": "Ficção Científica"
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 4,
+  "fields": {
+    "nome": "Drama"
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 5,
+  "fields": {
+    "nome": "Guerra"
+  }
+},
+{
+  "model": "catalogo.categoria",
   "pk": 6,
   "fields": {
-    "nome": "Documentário"
+    "nome": "Faroeste"
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 7,
+  "fields": {
+    "nome": "Animação"
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 1,
   "fields": {
-    "titulo": "Central do Brasil",
-    "ano": 1998,
+    "titulo": "Amnésia",
+    "ano": 2000,
     "sinopse": "",
     "diretor": 1,
     "categoria": 1
@@ -112,8 +105,8 @@
   "model": "catalogo.filme",
   "pk": 2,
   "fields": {
-    "titulo": "Abril Despedaçado",
-    "ano": 2001,
+    "titulo": "O Grande Truque",
+    "ano": 2006,
     "sinopse": "",
     "diretor": 1,
     "categoria": 1
@@ -123,65 +116,65 @@
   "model": "catalogo.filme",
   "pk": 3,
   "fields": {
-    "titulo": "Ainda Estou Aqui",
-    "ano": 2024,
+    "titulo": "Batman: O Cavaleiro das Trevas",
+    "ano": 2008,
     "sinopse": "",
     "diretor": 1,
-    "categoria": 1
+    "categoria": 2
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 4,
   "fields": {
-    "titulo": "Cidade de Deus",
-    "ano": 2002,
+    "titulo": "A Origem",
+    "ano": 2010,
     "sinopse": "",
-    "diretor": 2,
-    "categoria": 2
+    "diretor": 1,
+    "categoria": 3
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 5,
   "fields": {
-    "titulo": "Tropa de Elite",
-    "ano": 2007,
+    "titulo": "Interestelar",
+    "ano": 2014,
     "sinopse": "",
-    "diretor": 3,
-    "categoria": 2
+    "diretor": 1,
+    "categoria": 3
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 6,
   "fields": {
-    "titulo": "Tropa de Elite 2: O Inimigo Agora É Outro",
-    "ano": 2010,
+    "titulo": "Oppenheimer",
+    "ano": 2023,
     "sinopse": "",
-    "diretor": 3,
-    "categoria": 2
+    "diretor": 1,
+    "categoria": 4
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 7,
   "fields": {
-    "titulo": "Durval Discos",
-    "ano": 2002,
+    "titulo": "Tubarão",
+    "ano": 1975,
     "sinopse": "",
-    "diretor": 4,
-    "categoria": 3
+    "diretor": 2,
+    "categoria": 1
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 8,
   "fields": {
-    "titulo": "É Proibido Fumar",
-    "ano": 2009,
+    "titulo": "E.T.: O Extraterrestre",
+    "ano": 1982,
     "sinopse": "",
-    "diretor": 4,
+    "diretor": 2,
     "categoria": 3
   }
 },
@@ -189,143 +182,176 @@
   "model": "catalogo.filme",
   "pk": 9,
   "fields": {
-    "titulo": "Que Horas Ela Volta?",
-    "ano": 2015,
+    "titulo": "Jurassic Park: O Parque dos Dinossauros",
+    "ano": 1993,
     "sinopse": "",
-    "diretor": 4,
-    "categoria": 1
+    "diretor": 2,
+    "categoria": 3
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 10,
   "fields": {
-    "titulo": "Mãe Só Há Uma",
-    "ano": 2016,
+    "titulo": "A Lista de Schindler",
+    "ano": 1993,
     "sinopse": "",
-    "diretor": 4,
-    "categoria": 1
+    "diretor": 2,
+    "categoria": 4
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 11,
   "fields": {
-    "titulo": "O Auto da Compadecida",
-    "ano": 2000,
+    "titulo": "O Resgate do Soldado Ryan",
+    "ano": 1998,
     "sinopse": "",
-    "diretor": 5,
-    "categoria": 3
+    "diretor": 2,
+    "categoria": 5
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 12,
   "fields": {
-    "titulo": "Caramuru: A Invenção do Brasil",
-    "ano": 2001,
+    "titulo": "Pulp Fiction: Tempo de Violência",
+    "ano": 1994,
     "sinopse": "",
-    "diretor": 5,
-    "categoria": 3
+    "diretor": 3,
+    "categoria": 2
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 13,
   "fields": {
-    "titulo": "Lisbela e o Prisioneiro",
-    "ano": 2003,
+    "titulo": "Bastardos Inglórios",
+    "ano": 2009,
     "sinopse": "",
-    "diretor": 5,
-    "categoria": 4
+    "diretor": 3,
+    "categoria": 5
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 14,
   "fields": {
-    "titulo": "O Bem Amado",
-    "ano": 2010,
+    "titulo": "Django Livre",
+    "ano": 2012,
     "sinopse": "",
-    "diretor": 5,
-    "categoria": 3
+    "diretor": 3,
+    "categoria": 6
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 15,
   "fields": {
-    "titulo": "Madame Satã",
-    "ano": 2002,
+    "titulo": "Taxi Driver",
+    "ano": 1976,
     "sinopse": "",
-    "diretor": 6,
-    "categoria": 1
+    "diretor": 4,
+    "categoria": 4
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 16,
   "fields": {
-    "titulo": "O Céu de Suely",
-    "ano": 2006,
+    "titulo": "Os Bons Companheiros",
+    "ano": 1990,
     "sinopse": "",
-    "diretor": 6,
-    "categoria": 1
+    "diretor": 4,
+    "categoria": 2
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 17,
   "fields": {
-    "titulo": "A Vida Invisível",
-    "ano": 2019,
+    "titulo": "Os Infiltrados",
+    "ano": 2006,
     "sinopse": "",
-    "diretor": 6,
-    "categoria": 1
+    "diretor": 4,
+    "categoria": 2
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 18,
   "fields": {
-    "titulo": "O Som ao Redor",
-    "ano": 2012,
+    "titulo": "Meu Amigo Totoro",
+    "ano": 1988,
     "sinopse": "",
-    "diretor": 7,
-    "categoria": 5
+    "diretor": 5,
+    "categoria": 7
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 19,
   "fields": {
-    "titulo": "Aquarius",
-    "ano": 2016,
+    "titulo": "Princesa Mononoke",
+    "ano": 1997,
     "sinopse": "",
-    "diretor": 7,
-    "categoria": 1
+    "diretor": 5,
+    "categoria": 7
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 20,
   "fields": {
-    "titulo": "Retratos Fantasmas",
-    "ano": 2023,
+    "titulo": "A Viagem de Chihiro",
+    "ano": 2001,
     "sinopse": "",
-    "diretor": 7,
-    "categoria": 6
+    "diretor": 5,
+    "categoria": 7
   }
 },
 {
   "model": "catalogo.filme",
   "pk": 21,
   "fields": {
-    "titulo": "Carandiru",
-    "ano": 2003,
+    "titulo": "O Castelo Animado",
+    "ano": 2004,
     "sinopse": "",
-    "diretor": 8,
-    "categoria": 2
+    "diretor": 5,
+    "categoria": 7
+  }
+},
+{
+  "model": "catalogo.filme",
+  "pk": 22,
+  "fields": {
+    "titulo": "A Chegada",
+    "ano": 2016,
+    "sinopse": "",
+    "diretor": 6,
+    "categoria": 3
+  }
+},
+{
+  "model": "catalogo.filme",
+  "pk": 23,
+  "fields": {
+    "titulo": "Blade Runner 2049",
+    "ano": 2017,
+    "sinopse": "",
+    "diretor": 6,
+    "categoria": 3
+  }
+},
+{
+  "model": "catalogo.filme",
+  "pk": 24,
+  "fields": {
+    "titulo": "Duna",
+    "ano": 2021,
+    "sinopse": "",
+    "diretor": 6,
+    "categoria": 3
   }
 }
 ]

@@ -1,6 +1,6 @@
 # Rolo de Fita
 
-Aplicação em Django para consultar um catálogo de filmes brasileiros.
+Aplicação em Django para consultar um catálogo de filmes internacionais.
 
 ## Dupla 14
 - José Fernandes Figueiredo Filho
