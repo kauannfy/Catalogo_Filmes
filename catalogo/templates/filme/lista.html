@@ -2,52 +2,67 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rolo de Fita - Catálogo de Filmes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/catalogo.css' %}">
 </head>
 <body>
-    <h1>Rolo de Fita - Catálogo de Filmes</h1>
+    <header>
+        <h1>Rolo de Fita</h1>
+        <p>Catálogo de filmes brasileiros</p>
+    </header>
 
-    <form method="get">
-        <input type="text" name="busca" placeholder="Pesquisar por título" value="{{ busca }}">
+    <main>
+        <form method="get" class="filtros">
+            <input type="text" name="busca" placeholder="Pesquisar por título" value="{{ busca }}">
 
-        <select name="diretor">
-            <option value="">Todos os diretores</option>
-            {% for diretor in diretores %}
-                <option value="{{ diretor.id }}" {% if diretor.id|stringformat:"s" == diretor_selecionado %}selected{% endif %}>{{ diretor.nome }}</option>
-            {% endfor %}
-        </select>
+            <select name="diretor">
+                <option value="">Todos os diretores</option>
+                {% for diretor in diretores %}
+                    <option value="{{ diretor.id }}" {% if diretor.id|stringformat:"s" == diretor_selecionado %}selected{% endif %}>{{ diretor.nome }}</option>
+                {% endfor %}
+            </select>
 
-        <select name="categoria">
-            <option value="">Todas as categorias</option>
-            {% for categoria in categorias %}
-                <option value="{{ categoria.id }}" {% if categoria.id|stringformat:"s" == categoria_selecionada %}selected{% endif %}>{{ categoria.nome }}</option>
-            {% endfor %}
-        </select>
+            <select name="categoria">
+                <option value="">Todas as categorias</option>
+                {% for categoria in categorias %}
+                    <option value="{{ categoria.id }}" {% if categoria.id|stringformat:"s" == categoria_selecionada %}selected{% endif %}>{{ categoria.nome }}</option>
+                {% endfor %}
+            </select>
 
-        <button type="submit">Filtrar</button>
-        <a href="{% url 'catalogo:filmes_list' %}">Limpar</a>
-    </form>
+            <button type="submit">Filtrar</button>
+            <a href="{% url 'catalogo:filmes_list' %}">Limpar</a>
+        </form>
 
-    {% for filme in page_obj %}
-        <article>
-            <h2>{{ filme.titulo }}</h2>
-            <p>Diretor: {{ filme.diretor.nome }}</p>
-            <p>Categoria: {{ filme.categoria.nome }}</p>
-        </article>
-    {% empty %}
-        <p>Nenhum filme encontrado.</p>
-    {% endfor %}
+        <section class="grade">
+        {% for filme in page_obj %}
+            <article class="cartao">
+                <div class="capa">
+                    <h2>{{ filme.titulo }}</h2>
+                </div>
+                <div class="info">
+                    <p class="categoria">{{ filme.categoria.nome }}</p>
+                    <p>Diretor: {{ filme.diretor.nome }}</p>
+                    <p>Ano: {{ filme.ano }}</p>
+                </div>
+            </article>
+        {% empty %}
+            <p class="vazio">Nenhum filme encontrado.</p>
+        {% endfor %}
+        </section>
 
-    <nav>
-        {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.busca %}&amp;busca={{ request.GET.busca|urlencode }}{% endif %}{% if diretor_selecionado %}&amp;diretor={{ diretor_selecionado|urlencode }}{% endif %}{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada|urlencode }}{% endif %}">Anterior</a>
-        {% endif %}
+        <nav>
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.busca %}&amp;busca={{ request.GET.busca|urlencode }}{% endif %}{% if diretor_selecionado %}&amp;diretor={{ diretor_selecionado|urlencode }}{% endif %}{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada|urlencode }}{% endif %}">Anterior</a>
+            {% endif %}
 
-        <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+            <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
 
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}{% if request.GET.busca %}&amp;busca={{ request.GET.busca|urlencode }}{% endif %}{% if diretor_selecionado %}&amp;diretor={{ diretor_selecionado|urlencode }}{% endif %}{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada|urlencode }}{% endif %}">Próxima</a>
-        {% endif %}
-    </nav>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if request.GET.busca %}&amp;busca={{ request.GET.busca|urlencode }}{% endif %}{% if diretor_selecionado %}&amp;diretor={{ diretor_selecionado|urlencode }}{% endif %}{% if categoria_selecionada %}&amp;categoria={{ categoria_selecionada|urlencode }}{% endif %}">Próxima</a>
+            {% endif %}
+        </nav>
+    </main>
 </body>
 </html>
