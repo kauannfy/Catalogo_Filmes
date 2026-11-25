@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Filmes</title>
+</head>
+<body>
+    <h1>Catálogo de Filmes</h1>
+
+    <form method="get">
+        <input type="text" name="q" placeholder="Pesquisar por título" value="{{ busca }}">
+
+        <select name="diretor">
+            <option value="">Todos os diretores</option>
+            {% for d in diretores %}
+                <option value="{{ d.id }}" {% if d.id|stringformat:"s" == diretor_id %}selected{% endif %}>{{ d.nome }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="categoria">
+            <option value="">Todas as categorias</option>
+            {% for c in categorias %}
+                <option value="{{ c.id }}" {% if c.id|stringformat:"s" == categoria_id %}selected{% endif %}>{{ c.nome }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filtrar</button>
+        <a href="{% url 'lista_filmes' %}">Limpar</a>
+    </form>
+
+    <p>{{ paginator.count }} filme(s) encontrado(s)</p>
+
+    <ul>
+        {% for filme in page_obj %}
+            <li>
+                <strong>{{ filme.titulo }}</strong> ({{ filme.ano }})<br>
+                Diretor: {{ filme.diretor.nome }} | Categoria: {{ filme.categoria.nome }}
+            </li>
+        {% empty %}
+            <li>Nenhum filme encontrado.</li>
+        {% endfor %}
+    </ul>
+
+    {% if paginator.num_pages > 1 %}
+    <nav>
+        {% if page_obj.has_previous %}
+            <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.previous_page_number }}">« Anterior</a>
+        {% endif %}
+
+        <span>Página {{ page_obj.number }} de {{ paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+            <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.next_page_number }}">Próxima »</a>
+        {% endif %}
+    </nav>
+    {% endif %}
+</body>
+</html>
